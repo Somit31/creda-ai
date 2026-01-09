@@ -39,7 +39,8 @@ const Welcome = () => {
 
 
     return (
-        <div className="relative min-h-screen overflow-hidden">
+        <div className="px-4 md:px-6 max-w-6xl mx-auto">
+
             {/* FIXED BACKGROUND */}
             <div
                 className="fixed inset-0 bg-center bg-cover"
@@ -91,7 +92,7 @@ const Welcome = () => {
                 >
 
                     {/* BRAND */}
-                    <h1 className="text-9xl md:text-7xl font-semibold tracking-tight text-white">
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold text-white">
                         Creda AI
                     </h1>
 
@@ -112,29 +113,48 @@ const Welcome = () => {
                             Private. Simple. Built for real-life finances.
                         </p>
 
-                        {/* Ask AI */}
                         <form
                             onSubmit={handleAsk}
-                            className="mt-10 flex items-center rounded-full
-              bg-black/40 border border-white/10 px-4 py-2
-              focus-within:border-white/30 transition"
+                            className="mt-8 w-full"
                         >
-                            <input
-                                type="text"
-                                placeholder="Why do I still feel broke?"
-                                value={question}
-                                onChange={(e) => setQuestion(e.target.value)}
-                                className="flex-1 bg-transparent outline-none text-sm text-white
-                placeholder-gray-500 px-2"
-                            />
+                            {/* Input ask ai */}
+                            <div
+                                className="flex items-center rounded-full
+    bg-black/40 border border-white/10
+    px-4 py-2"
+                            >
+                                <input
+                                    type="text"
+                                    placeholder="Why do I still feel broke?"
+                                    value={question}
+                                    onChange={(e) => setQuestion(e.target.value)}
+                                    className="flex-1 bg-transparent outline-none
+      text-sm md:text-base text-white
+      placeholder-gray-500"
+                                />
+
+                                {/* Arrow button ONLY for desktop */}
+                                <button
+                                    type="submit"
+                                    className="hidden md:flex ml-2 h-10 w-10 rounded-full
+      bg-white text-black items-center justify-center
+      hover:scale-105 transition"
+                                >
+                                    →
+                                </button>
+                            </div>
+
+                            {/* Mobile CTA button */}
                             <button
                                 type="submit"
-                                className="ml-2 h-10 w-10 rounded-full bg-white text-black
-                flex items-center justify-center hover:scale-105 transition"
+                                className="md:hidden mt-4 w-full py-3 rounded-full
+    bg-white text-black text-sm font-medium
+    hover:opacity-90 transition"
                             >
-                                →
+                                Ask Creda AI
                             </button>
                         </form>
+
 
                         {/* Chips */}
                         <div className="mt-8 flex flex-wrap justify-center gap-3 text-xs">

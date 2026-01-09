@@ -92,7 +92,7 @@ export default function Dashboard() {
     };
 
     return (
-        <div className="relative min-h-screen overflow-hidden">
+        <div className="px-4 md:px-6 max-w-6xl mx-auto">
             <div
                 className="fixed inset-0 bg-cover bg-center"
                 style={{
